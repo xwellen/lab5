@@ -20,7 +20,7 @@ public class CommandInvoker {
         }
     }
 
-    HashMap<String, Command> getCommandMap() {
+    public HashMap<String, Command> getCommandMap() {
         return commandMap;
     }
 }
