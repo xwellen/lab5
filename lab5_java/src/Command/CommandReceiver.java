@@ -1,6 +1,7 @@
 package Command;
 
 import CollectonUtils.CollectionManager;
+import CollectonUtils.CollectionUtils;
 import Utils.ElementCreator;
 
 public class CommandReceiver {
@@ -25,6 +26,23 @@ public class CommandReceiver {
 
     public void show() {
         CollectionManager.show();
+    }
+
+    public void clear(){
+        CollectionManager.clear();
+    }
+
+    public void remove_by_id(String ID) {
+        long marineID;
+        try {
+            marineID = Long.parseLong(ID);
+            if (CollectionUtils.checkExist(marineID)) {
+                CollectionManager.remove_by_id(marineID);
+                System.out.println("Элемент с ID " + marineID + " успешно удален из коллекции.");
+            } else {System.out.println("Элемента с таким ID нет в коллекции.");}
+        } catch (NumberFormatException e) {
+            System.out.println("Команда не выполнена. Вы ввели некорректный аргумент.");
+        }
     }
 
     public void exit() {

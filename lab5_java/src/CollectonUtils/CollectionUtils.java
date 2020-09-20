@@ -3,7 +3,7 @@ package CollectonUtils;
 import BaseClass.SpaceMarine;
 
 public class CollectionUtils {
-    public static boolean checkExist(Integer ID) {
+    public static boolean checkExist(long ID) {
         for (SpaceMarine spaceMarine:CollectionManager.getLinkedList()) {
             return spaceMarine.getId() == ID;
         }

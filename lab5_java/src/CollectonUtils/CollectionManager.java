@@ -48,7 +48,7 @@ public class CollectionManager {
 //        });
 //    }
 
-    public static void remove_by_id(Integer marineID) {
+    public static void remove_by_id(long marineID) {
         linkedList.forEach(spaceMarine -> {
             if (spaceMarine.getId() == marineID) { linkedList.remove(spaceMarine); }
         });
