@@ -68,6 +68,20 @@ public class CollectionManager {
         });
     }
 
+    public static void update(SpaceMarine marineToUpdate, long elementId) {
+        linkedList.forEach(spaceMarine -> {
+            if (spaceMarine.getId() == elementId) {
+                spaceMarine.setName(marineToUpdate.getName());
+                spaceMarine.setCoordinates(marineToUpdate.getCoordinates());
+                spaceMarine.setHealth(marineToUpdate.getHealth());
+                spaceMarine.setCategory(marineToUpdate.getCategory());
+                spaceMarine.setWeaponType(marineToUpdate.getWeaponType());
+                spaceMarine.setMeleeWeapon(marineToUpdate.getMeleeWeapon());
+                spaceMarine.setChapter(marineToUpdate.getChapter());
+            }
+        });
+    }
+
 
 //    public static void countByGroupAdmin(Person groupAdmin) {
 //        System.out.println(linkedList.stream().filter(studyGroup -> studyGroup.getGroupAdmin().equals(groupAdmin)).count());

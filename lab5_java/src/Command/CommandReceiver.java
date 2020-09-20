@@ -45,6 +45,17 @@ public class CommandReceiver {
         }
     }
 
+    public void update(String ID) {
+        long marineID;
+        try {
+            marineID = Long.parseLong(ID);
+            if (CollectionUtils.checkExist(marineID)) { CollectionManager.update(ElementCreator.createSpaceMarine(), marineID); }
+            else {System.out.println("Элемента с таким ID нет в коллекции.");}
+        } catch (NumberFormatException e) {
+            System.out.println("Команда не выполнена. Вы ввели некорректный аргумент.");
+        }
+    }
+
     public void exit() {
         System.out.println("Завершение работы программы.");
         System.exit(0);

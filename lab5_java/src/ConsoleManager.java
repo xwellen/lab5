@@ -20,6 +20,7 @@ public class ConsoleManager {
         commandInvoker.register("add", new Add(commandReceiver));
         commandInvoker.register("clear", new Clear(commandReceiver));
         commandInvoker.register("remove_by_id", new RemoveByID(commandReceiver));
+        commandInvoker.register("update", new Update(commandReceiver));
 
         System.out.println("number of commands:  " + commandInvoker.getCommandMap().size());
 
