@@ -69,6 +69,10 @@ public class CommandReceiver {
         CollectionManager.filter_by_health(targetHealth);
     }
 
+    public void remove_greater() {
+        CollectionManager.remove_greater(ElementCreator.createSpaceMarine());
+    }
+
     public void exit() {
         System.out.println("Завершение работы программы.");
         System.exit(0);
