@@ -1,5 +1,6 @@
 package Command;
 
+import BaseClass.SpaceMarine;
 import BaseClass.Weapon;
 import CollectonUtils.CollectionManager;
 import CollectonUtils.CollectionUtils;
@@ -84,6 +85,20 @@ public class CommandReceiver {
         }
         catch (IOException e){
             System.out.println(e.getMessage() + "\n Попробуйте снова");
+        }
+    }
+
+    public void add_if_min() {
+        try {
+            SpaceMarine minElement = CollectionManager.getMinElement();
+            SpaceMarine spaceMarineToAdd = ElementCreator.createSpaceMarine();
+            if (spaceMarineToAdd.compareTo(minElement) < 0) {
+                CollectionManager.add(spaceMarineToAdd);
+                System.out.println("Элемент успешно добавлен в коллекцию");
+            } else System.out.println("Элемент превосходит минимальный, не добавлен в коллекцию");
+        }
+        catch (NullPointerException ex){
+            System.out.println(ex.getMessage());
         }
     }
 

@@ -129,6 +129,16 @@ public class CollectionManager {
         }
     }
 
+    public static SpaceMarine getMinElement() throws NullPointerException{
+        if (linkedList.size() > 0){
+            SpaceMarine result = linkedList.getFirst();
+            for (SpaceMarine spaceMarine : linkedList){
+                if (spaceMarine.compareTo(result) < 0) result = spaceMarine;
+            }
+            return result;
+        }
+        else throw new NullPointerException("Коллекция пуста");
+    }
 
 //    public static void countByGroupAdmin(Person groupAdmin) {
 //        System.out.println(linkedList.stream().filter(studyGroup -> studyGroup.getGroupAdmin().equals(groupAdmin)).count());
