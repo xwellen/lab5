@@ -2,6 +2,7 @@ package CollectonUtils;
 
 import BaseClass.SpaceMarine;
 import BaseClass.Weapon;
+import Utils.ElementCreator;
 import com.sun.deploy.security.SelectableSecurityManager;
 
 import java.time.ZonedDateTime;
@@ -140,7 +141,22 @@ public class CollectionManager {
         else throw new NullPointerException("Коллекция пуста");
     }
 
-//    public static void countByGroupAdmin(Person groupAdmin) {
-//        System.out.println(linkedList.stream().filter(studyGroup -> studyGroup.getGroupAdmin().equals(groupAdmin)).count());
-//    }
+    public static void addIfMin(SpaceMarine spaceMarineToAdd){
+        try {
+            SpaceMarine minElement = CollectionManager.getMinElement();
+            if (spaceMarineToAdd.compareTo(minElement) < 0) {
+                CollectionManager.add(spaceMarineToAdd);
+                System.out.println("Элемент успешно добавлен в коллекцию");
+            } else System.out.println("Элемент превосходит минимальный, не добавлен в коллекцию");
+        }
+        catch (NullPointerException ex){
+            System.out.println(ex.getMessage());
+        }
+    }
+
+    public static void addJsonObject(SpaceMarine spaceMarine) {
+        spaceMarine.setId(IDGenerator.generateID((int) spaceMarine.getId()));
+        linkedList.add(spaceMarine);
+    }
+
 }

@@ -26,20 +26,26 @@ public class ElementCreator {
     }
 
 
-//    public static StudyGroup createScriptStudyGroup(ArrayList<String> parameters) {
-//        if (validateArray(parameters)) {
-//            FormOfEducation formOfEducation = null;
-//            if (!parameters.get(4).isEmpty()) { formOfEducation = FormOfEducation.valueOf(parameters.get(4)); }
-//            return new StudyGroup(parameters.get(0),
-//                    new Coordinates(Integer.parseInt(parameters.get(1)), Float.parseFloat(parameters.get(2))),
-//                    Integer.parseInt(parameters.get(3)),
-//                    formOfEducation,
-//                    Semester.valueOf(parameters.get(5)),
-//                    new Person(parameters.get(6), Integer.parseInt(parameters.get(7)), Color.valueOf(parameters.get(8)), Color.valueOf(parameters.get(9)), Country.valueOf(parameters.get(10))));
-//        } else { System.out.println("Один из параметров не соответствует требованиям."); }
-//
-//        return null;
-//    }
+    public static SpaceMarine createScriptSpaceMarine(ArrayList<String> parameters) {
+        if (validateArray(parameters)) {
+            AstartesCategory astartesCategory = null;
+            Weapon weapon = null;
+            Chapter chapter = new Chapter(null, null);
+            if (!parameters.get(4).isEmpty()) { astartesCategory = AstartesCategory.valueOf(parameters.get(4)); }
+            if (!parameters.get(5).isEmpty()) { weapon = Weapon.valueOf(parameters.get(5)); }
+            if (!parameters.get(7).isEmpty()) { chapter.setName(chapter.getName().valueOf(parameters.get(7))); }
+            if (!parameters.get(8).isEmpty()) { chapter.setWorld(chapter.getWorld().valueOf(parameters.get(8))); }
+            return new SpaceMarine(parameters.get(0),
+                    new Coordinates(Long.parseLong(parameters.get(1)), Double.parseDouble(parameters.get(2))),
+                    Long.parseLong(parameters.get(3)),
+                    astartesCategory,
+                    weapon,
+                    MeleeWeapon.valueOf(parameters.get(6)),
+                    chapter);
+        } else { System.out.println("Один из параметров не соответствует требованиям."); }
+
+        return null;
+    }
 
     private static boolean validateArray(ArrayList<String> parameters) {
         try {

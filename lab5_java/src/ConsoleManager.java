@@ -7,10 +7,11 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class ConsoleManager {
-     void startInteractiveMode() throws IOException {
+     void startInteractiveMode() {
         CommandInvoker commandInvoker = new CommandInvoker();
         CommandReceiver commandReceiver = new CommandReceiver(commandInvoker);
         CollectionManager.initList();
+
 
 
         commandInvoker.register("exit", new Exit(commandReceiver));
@@ -27,6 +28,8 @@ public class ConsoleManager {
         commandInvoker.register("remove_greater", new RemoveGreater(commandReceiver));
         commandInvoker.register("count_greater_than_weapon_type", new CountGreaterThanWeaponType(commandReceiver));
         commandInvoker.register("add_if_min", new AddIfMin(commandReceiver));
+        commandInvoker.register("execute_script", new ExecuteScript(commandReceiver));
+        commandInvoker.register("save",new Save(commandReceiver));
 
 
         System.out.println("number of commands:  " + commandInvoker.getCommandMap().size());
