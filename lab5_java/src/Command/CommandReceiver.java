@@ -64,6 +64,11 @@ public class CommandReceiver {
         CollectionManager.average_of_health();
     }
 
+    public void filter_by_health(String stringHealth){
+        long targetHealth = Long.parseLong(stringHealth);
+        CollectionManager.filter_by_health(targetHealth);
+    }
+
     public void exit() {
         System.out.println("Завершение работы программы.");
         System.exit(0);
