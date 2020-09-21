@@ -22,6 +22,7 @@ public class ConsoleManager {
         commandInvoker.register("remove_by_id", new RemoveByID(commandReceiver));
         commandInvoker.register("update", new Update(commandReceiver));
         commandInvoker.register("remove_first", new RemoveFirst(commandReceiver));
+        commandInvoker.register("average_of_health", new AverageOfHealth(commandReceiver));
 
         System.out.println("number of commands:  " + commandInvoker.getCommandMap().size());
 

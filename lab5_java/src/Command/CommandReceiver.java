@@ -60,6 +60,10 @@ public class CommandReceiver {
         CollectionManager.remove_first();
     }
 
+    public void average_of_health(){
+        CollectionManager.average_of_health();
+    }
+
     public void exit() {
         System.out.println("Завершение работы программы.");
         System.exit(0);

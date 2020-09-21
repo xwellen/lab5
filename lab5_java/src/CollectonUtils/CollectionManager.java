@@ -87,6 +87,17 @@ public class CollectionManager {
         else { System.out.println("Коллекция пуста."); }
     }
 
+    public static void average_of_health(){
+        if (linkedList.size() > 0){
+            long healthSum = 0;
+            for (SpaceMarine spaceMarine : linkedList) healthSum += spaceMarine.getHealth();
+            System.out.println("Среднее значение здоровья: " + healthSum/(double)linkedList.size());
+        }
+        else {
+            System.out.println("Коллекция пуста");
+        }
+    }
+
 
 //    public static void countByGroupAdmin(Person groupAdmin) {
 //        System.out.println(linkedList.stream().filter(studyGroup -> studyGroup.getGroupAdmin().equals(groupAdmin)).count());
