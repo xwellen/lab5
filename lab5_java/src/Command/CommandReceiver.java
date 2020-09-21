@@ -56,6 +56,10 @@ public class CommandReceiver {
         }
     }
 
+    public void remove_first(){
+        CollectionManager.remove_first();
+    }
+
     public void exit() {
         System.out.println("Завершение работы программы.");
         System.exit(0);

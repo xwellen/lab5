@@ -82,6 +82,11 @@ public class CollectionManager {
         });
     }
 
+    public static void remove_first() {
+        if (linkedList.size() > 0) { linkedList.remove(0); }
+        else { System.out.println("Коллекция пуста."); }
+    }
+
 
 //    public static void countByGroupAdmin(Person groupAdmin) {
 //        System.out.println(linkedList.stream().filter(studyGroup -> studyGroup.getGroupAdmin().equals(groupAdmin)).count());
