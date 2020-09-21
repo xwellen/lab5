@@ -1,6 +1,8 @@
 package CollectonUtils;
 
 import BaseClass.SpaceMarine;
+import BaseClass.Weapon;
+import com.sun.deploy.security.SelectableSecurityManager;
 
 import java.time.ZonedDateTime;
 import java.util.Collections;
@@ -108,6 +110,19 @@ public class CollectionManager {
                 }
             }
             if (count == 0) System.out.println("Бойцов с выбранным значением здоровья нет в коллекции");
+        }
+        else {
+            System.out.println("Коллекция пуста");
+        }
+    }
+
+    public static void count_greater_than_weapon_type(Weapon weapon){
+        if (linkedList.size() > 0){
+            int count = 0;
+            for (SpaceMarine spaceMarine : linkedList){
+                if (spaceMarine.getWeaponType() != null && spaceMarine.getWeaponType().compareTo(weapon) > 0) count++;
+            }
+            System.out.println("Результат: "+ count);
         }
         else {
             System.out.println("Коллекция пуста");

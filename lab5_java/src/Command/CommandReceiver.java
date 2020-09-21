@@ -1,8 +1,12 @@
 package Command;
 
+import BaseClass.Weapon;
 import CollectonUtils.CollectionManager;
 import CollectonUtils.CollectionUtils;
 import Utils.ElementCreator;
+import Utils.EnumReaders.WeaponReader;
+
+import java.io.IOException;
 
 public class CommandReceiver {
     private final CommandInvoker commandInvoker;
@@ -71,6 +75,16 @@ public class CommandReceiver {
 
     public void remove_greater() {
         CollectionManager.remove_greater(ElementCreator.createSpaceMarine());
+    }
+
+    public void count_greater_than_weapon_type(String stringWeapon){
+        try{
+            Weapon weapon = WeaponReader.parseWeapon(stringWeapon);
+            CollectionManager.count_greater_than_weapon_type(weapon);
+        }
+        catch (IOException e){
+            System.out.println(e.getMessage() + "\n Попробуйте снова");
+        }
     }
 
     public void exit() {

@@ -25,6 +25,8 @@ public class ConsoleManager {
         commandInvoker.register("average_of_health", new AverageOfHealth(commandReceiver));
         commandInvoker.register("filter_by_health", new FilterByHealth(commandReceiver));
         commandInvoker.register("remove_greater", new RemoveGreater(commandReceiver));
+        commandInvoker.register("count_greater_than_weapon_type", new CountGreaterThanWeaponType(commandReceiver));
+        
 
         System.out.println("number of commands:  " + commandInvoker.getCommandMap().size());
 
